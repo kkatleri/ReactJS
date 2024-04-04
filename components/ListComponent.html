@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Programming Languages </title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.3/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="progLangs"></div>
+        <div id="frameworks"></div>
+        <script type="text/babel">
+
+            class DisplayList extends React.Component{
+
+                render(){
+                    var list = this.props.list;
+
+                    return <div>
+                        <h1>{this.props.title}</h1>
+                        <ul>
+                            {list.map(item => <li>{item}</li>)}
+                        </ul>
+                        </div>;
+                } 
+            }
+
+            var programmingLangs = ["Java", "Go", "JavaScript", "Python"]
+            ReactDOM.render(<div><DisplayList list={programmingLangs} title="Programming Languages" /></div>, document.getElementById("progLangs"))
+
+            var frameworks = ["Spring Boot", "ReactJS", "Angular", "Django"]
+            ReactDOM.render(<div><DisplayList list={frameworks} title="Frameworks" /></div>, document.getElementById("frameworks"))
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Programming Languages </title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.3/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+
+            var STUDENTS = [{name: "Tom", age: "30", city: "Kansas City"},
+                            {name: "Dick", age: "40", city: "Denver"},
+                            {name: "Harry", age: "50", city: "Chicago"},
+                            {name: "Dan", age: "60", city: "New York"}];
+
+            class DisplayStudents extends React.Component{
+
+                constructor(props){
+                    super(props);
+                    this.state = {students:STUDENTS, studentsClone:STUDENTS};
+                }
+
+                handleOnUpdate(event){
+                    //alert(event.target.value);
+
+                    var filterString = event.target.value;
+
+                    var filteredStudents = [];
+
+                    for(var student of this.state.students){
+                        if(student.name.toLowerCase().indexOf(filterString.toLowerCase()) >= 0 
+                            || student.city.toLowerCase().indexOf(filterString.toLowerCase()) >= 0 ){
+                            filteredStudents.push(student);
+                        }
+                    }
+
+                    this.setState({studentsClone:filteredStudents});
+                }
+
+                render(){
+
+                    return <div>
+                                <h1> Student Details </h1>
+                                <br/><input type="text" placeholder="Search by Name or City " onChange={this.handleOnUpdate.bind(this)} />
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Age</td>
+                                            <td>City</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {this.state.studentsClone.map(student => 
+                                            <tr>
+                                                <td>{student.name}</td>
+                                                <td>{student.age}</td>
+                                                <td>{student.city}</td>
+                                            </tr>)}
+                                    </tbody>
+                                </table>
+                            </div>;
+                }
+
+            }
+
+            ReactDOM.render(<DisplayStudents />, document.getElementById("root"));
+
+        </script>
+    </body>
+</html>

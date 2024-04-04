@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Customer Details </title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.3/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            class CustomerDetails extends React.Component{
+
+                render(){
+                    return <div>
+                        <h1> Customer Details </h1>
+                        <br/><b>Name : </b> {this.props.name}
+                        <br/><b>Email: </b> {this.props.email}
+                        <CustomerAddress address={this.props.address}/>
+                        </div>;
+                }
+            }
+
+            class CustomerAddress extends React.Component{
+                render(){
+                    return <div>
+                        <br/><b>Address : </b>
+                        <br/>Street: {this.props.address.street}
+                        <br/>City: {this.props.address.city}
+                        </div>;
+                }
+            }
+
+            var address = {
+                street: "Pflumm Street",
+                city: "Kansas City"
+            };
+            ReactDOM.render(<div><CustomerDetails name="Khujema" email="kk@yahoo.com" address={address} /></div>, document.getElementById("root"));
+        </script>
+
+    </body>
+</html>

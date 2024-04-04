@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login Component </title>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.24.3/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+
+            class LoginComponent extends React.Component{
+
+                handleLogin(event){
+                    alert("Inside handleLogin");
+                    console.log(event);
+                    console.log(this);
+                }
+
+                render(){
+
+                    return <div>
+                            <h1>Login</h1>
+                            <br/><label> Username : </label> <input type="text" />
+                            <br/><br/><label> Password : </label> <input type="password" />
+                            <br/><br/><input type="button" value="Login" onClick={this.handleLogin.bind(this)}/>
+                            </div>
+                }
+            }
+
+            ReactDOM.render(<LoginComponent />, document.getElementById("root"));
+
+        </script>
+    </body>
+</html>
