@@ -44,3 +44,33 @@ This repository contains my understanding of ReactJS and example react scripts a
 
 ### 5. [Understanding Styling](#styling)
 - How to apply styling the react way using `style` attribute
+
+
+## React Projects
+
+- This section demonstrates how React projects are created using CREATE-REACT-APP CLI utility.
+- Syntax - `npx create-react-app <project-name>
+- There are 2 types of components 
+    - Class based components - This is what explored in the previous sections while learning about important concepts. These inherently provides state and are verbose in nature.
+    - Function based components - This was introducded and encouraged in the later version of React. These are stateless, lightweight and easy to test components and provides better encapsulation.
+- Latest React version create-react-app utility will create project with function based components.
+- Following projects are created to explore more features of React
+
+### 1. First React Project
+- How to create react project using create-react-app utility.
+- Understand project structure
+- Understand execution flow
+    - React Webpack plugin plays important role in starting up React application
+    - It invokes index.js which is the starting point 
+
+### 2. Making Ajax Calls
+- How to call REST APIs - GET, POST
+- Use of Axion library to make REST calls
+
+### 3. Component Lifecycle
+- Understand various component lifecycle and methods 
+- How to make use React Hooks to use states with Function based components.
+    - useState - helps manage the state 
+    - useEffect - helps be in sync with external system such as API calls
+
+ 
