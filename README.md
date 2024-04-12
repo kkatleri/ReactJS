@@ -73,4 +73,16 @@ This repository contains my understanding of ReactJS and example react scripts a
     - useState - helps manage the state 
     - useEffect - helps be in sync with external system such as API calls
 
+### 4. Build REST APIs using NodeJS Express for Product usecase
+- Understand various aspects of building nodejs application
+- How to build REST APIs and launch web server using Express framework
+    - Add CORS capability to allow cross origin calls
+    - Add body parsers for POST APIs
+- How to connect to MySQL database using mysql2 node package 
+    - Define config and connection js files
+- How to make use of module.exports to be able to call modules from different modules.
+
+### 5. Build Product CRUD client using ReactJS
+- How to use axios library to make REST API calls.
+- How to make use of Routes for web page navigations on client side using react-router-dom framework.
  
